@@ -137,3 +137,13 @@ button:hover {
 	color: #26a70c;
 	text-shadow:#000 1px 1px;
 }
+
+.resptxt{
+	text-align: center;
+	height: 100px;
+	width: 1700px;
+	box-sizing: border-box; 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

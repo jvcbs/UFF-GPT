@@ -64,9 +64,16 @@
 			</div>
 		</section>
 		
+		
 		<div>
 			{%if "id" in session%}
-			<textarea name="" id="RESPOSTA" cols="253" rows="10"></textarea>
+			<div class =" sucesso display-flex-justify-center">
+				<h3>Resposta:</h3>
+			</div>
+
+			<div class="display-flex-justify-center">
+				<textarea class="resptxt" placeholder="Clique em uma pergunta para começar!&#10Sua resposta aparecerá aqui..." name="" id="RESPOSTA" ></textarea>
+			</div>
 			{% endif %}
 		</div>
 	</main>
