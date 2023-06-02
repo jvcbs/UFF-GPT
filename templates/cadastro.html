@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+
+<body>
+    <div id="login_fundo">
+        <div class="subtitle container display-flex-justify-center">
+            <h3>CADASTRE-SE NO UFF-GPT</h3>
+        </div>
+
+
+        <div class="container display-flex-justify-center">
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              <ul class=flashes>
+              {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+              {% endfor %}
+              </ul>
+            {% endif %}
+          {% endwith %}
+            
+
+            <form action="{{ url_for('cadastro') }}" id="CADASTRO" method="post">
+                <label for="User"></label>
+                <input type="text" name="usuário" id="usuário" required placeholder="Usuário:"> <br><br>
+                <label for="senha" id="senha"></label>
+                <input type="password" name="senha" id="senha" required placeholder="Senha:"> <br><br>
+                <label for="conf_senha" id="conf_senha"></label>
+                <input type="password" name="conf_senha" id="conf_senha" required placeholder="Confirmar senha:"> <br>
+                <br>
+                <button class="display-flex-justify-center enterbutton" type="submit" id="btn_cadastro">
+                    <span></span>Realizar cadastro
+                </button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

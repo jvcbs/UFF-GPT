@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>home</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+
+
+
+<body>
+	<main>
+	
+
+		<section class="title display-flex-justify-center">
+			<div>
+				<h2>UFF-GPT</h2>
+				{% with messages = get_flashed_messages(with_categories=true) %}
+				{% if messages %}
+				  <ul class=flashes>
+				  {% for category, message in messages %}
+					<li class="{{ category }}">{{ message }}</li>
+				  {% endfor %}
+				  </ul>
+				{% endif %}
+			  {% endwith %}
+				
+			</div>
+		</section>
+
+		<p class="subtitle display-flex-justify-center"> Discuta temas importantes (ou nem tanto) que englobam o nosso
+			ambiente universitário!</p>
+
+		<section>
+
+
+			<div class="display-flex-justify-center">
+				<button class="button" id="button1" onclick="sendNumber(1)">Como conseguir um estágio no primeiro período?</button>
+				<button class="button" id="button2" onclick="sendNumber(2)">Quantas vezes posso reprovar antes de ser jubilado?</button>
+				<button class="button" id="button3" onclick="sendNumber(3)">Como passar com o Ochs?</button>
+			</div>
+
+			<div class="display-flex-justify-center">
+				<button class="button" id="button4" onclick="sendNumber(4)">Alunos de computação podem ter namorada?</button>
+				<button class="button" id="button5" onclick="sendNumber(5)">Quem é o aluno com mais reprovamentos da UFF?</button>
+				<button class="button" id="button6" onclick="sendNumber(6)">Quantos decibéis tem a risada do Antonio?</button>
+			</div>
+
+		</section>
+
+		<section>
+			<div class="display-flex-justify-center">
+				<div>
+					{%if "id" not in session%}
+					<a href="login"><button class="enterbutton">Já tenho uma conta:</button></a>
+					<a href="cadastro"><button class="enterbutton">Novo Cadastro:</button></a>
+					{% endif %}
+				</div>
+			</div>
+		</section>
+		
+		<div>
+			{%if "id" in session%}
+			<textarea name="" id="RESPOSTA" cols="253" rows="10"></textarea>
+			{% endif %}
+		</div>
+	</main>
+
+	<script src="/static/script.js"></script>
+</body>
+
+</html>
