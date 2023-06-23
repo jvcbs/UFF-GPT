@@ -24,7 +24,12 @@
             {% if sucesso %}
             <div class="sucesso">{{ sucesso }}</div>
             {% endif %}
-                    
+             
+            <body>
+                {% for mesg in get_flashed_messages() %}
+                <erro class = 'erro'>{{ mesg }}</erro>
+                {% endfor %}
+              </body>
 
         <div class="container display-flex-justify-center">
             <form action="/login" id="Login" method="post">
@@ -33,12 +38,12 @@
                 <label for="senha" id="senha"></label>
                 <input type="password" name="senha" id="senha" required placeholder="Senha:"> <br> <br>
 
+            
                 <div>
                     <button class="display-flex-justify-center enterbutton" type="submit" id="btn_login">
                         <span></span>ENTRAR
-                    </button>
+                    </button>                  
                 </div>
-
             </form>
         </div>
     </div>

@@ -59,6 +59,8 @@
 					{%if "id" not in session%}
 					<a href="login"><button class="enterbutton">Já tenho uma conta:</button></a>
 					<a href="cadastro"><button class="enterbutton">Novo Cadastro:</button></a>
+					<a href="/loginG"><button class="enterbutton">Entrar com Google:</button></a>
+
 					{% endif %}
 				</div>
 			</div>
@@ -73,6 +75,10 @@
 
 			<div class="display-flex-justify-center">
 				<textarea class="resptxt" placeholder="Clique em uma pergunta para começar!&#10Sua resposta aparecerá aqui..." name="" id="RESPOSTA" ></textarea>
+			</div>
+
+			<div class = "display-flex-justify-center">
+				<a href="/logout"><button class="outbutton">Logout:</button></a>
 			</div>
 			{% endif %}
 		</div>
